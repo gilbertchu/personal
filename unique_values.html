@@ -1,0 +1,37 @@
+<!-- Using js to find unique values in a comma separated list and a simple application -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uniques</title>
+</head>
+<body>
+<h3>Find unique values for a comma-separated list.</h3>
+<p>Enter values in top box. Automatically trims whitespace before and after values.</p>
+<div style='display:inline-block;text-align:center;'>
+<textarea id='in' value='' rows='6' cols='50'></textarea><br>
+<button type='button' onclick='unq.findUniques(); return false;'>Generate Uniques</button><br>
+<textarea id='out' value='' rows='6' cols='50' readonly></textarea>
+</div>
+<p id='log'></p>
+<script type='text/javascript'>
+(function(unq,undefined){
+	Array.prototype.unique = function() {
+		var o = {}, i, l = this.length, r = [];
+		for (i=0; i<l; i+=1) o[this[i]] = this[i];
+		for (i in o) r.push(o[i]);
+		return r;
+	};
+	var re = /\s*,\s*/;
+	unq.findUniques = function() {
+		var x = document.getElementById('in').value.trim().split(re);
+		var log = 'Number of elements before split: '+x.length;
+		x = x.unique();
+		console.log(x);
+		document.getElementById('out').value = x;
+		log += '<br>Number of unique elements: '+x.length;
+		document.getElementById('log').innerHTML = log;
+	}
+})(window.unq=window.unq||{});
+</script>
+</body>
+</html>
