@@ -1,9 +1,19 @@
-<!-- This is a simple example of using PHP to turn tables into HTML. You can copy tables directly from excel docs by selecting their columns. -->
 <!DOCTYPE html>
 <html>
 <head>
 <title>Table Import</title>
+<style type='text/css'>
+table.out tr td {
+	border:1px solid #666;
+	padding:3px;
+}
+table.out tr th {
+	border:1px solid #666;
+	padding:3px;
+}
+</style>
 </head>
+<body>
 <?
 if (isset($_POST['create'])) {
 	$data=explode("\n",trim($_POST['rawdata']));
@@ -13,20 +23,9 @@ if (isset($_POST['create'])) {
 		$formatted[array_shift($cells)]=$cells;
 	}
 	?>
-	<style type='text/css'>
-	table.out tr td {
-		border:1px solid #666;
-		padding:3px;
-	}
-	table.out tr th {
-		border:1px solid #666;
-		padding:3px;
-	}
-	</style>
 	<h3>Output</h3>
 	<?
-	echo "<table class='out'>";
-	echo "<tr>";
+	echo "<table class='out'><tr>";
 	foreach ($title as $tv) {
 		echo "<th>".$tv."</th>";
 	}
