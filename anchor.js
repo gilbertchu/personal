@@ -15,7 +15,9 @@ var backgroundSource = "none"; //URL for custom background; "none" to disable
 var anchorSrc = "./sample.jpg";
 */
 //Requires jQuery
+//You will want to minify this script before hosting. 
 
+if (typeof anchorSrc!='undefined'){
 (function($,width,height,origin,align,pvertical,refresh,displayChance,src,bgsrc,cap,ips,slen,stripe,undefined){
 //if (typeof stripe == "undefined") stripe=false;
 if (displayChance<100&&displayChance>0&&(Math.random()*100)>displayChance) return;
@@ -255,4 +257,4 @@ function f_load(){
 	$(f).unbind();
 	$(d).animate(aShow,500,'swing',f_animateLoad);
 }
-}(jQuery,anchorWidth,anchorHeight,anchorOrigin,anchorAlign,pvertical,anchorRefresh,displayChance,anchorSrc,backgroundSource,capping,impperses,seslen,window.anchorStripe=window.anchorStripe||{}));
+}(jQuery,anchorWidth,anchorHeight,anchorOrigin,anchorAlign,pvertical,anchorRefresh,displayChance,anchorSrc,backgroundSource,capping,impperses,seslen,window.anchorStripe=window.anchorStripe||{}));}
