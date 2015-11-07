@@ -15,7 +15,7 @@ var backgroundSource = "none"; //URL for custom background; "none" to disable
 var anchorSrc = "./sample.jpg";
 */
 //Requires jQuery
-//You will want to minify this script before hosting. 
+//You will want to minify this script before hosting!
 
 if (typeof anchorSrc!='undefined'){
 (function($,width,height,origin,align,pvertical,refresh,displayChance,src,bgsrc,cap,ips,slen,stripe,undefined){
