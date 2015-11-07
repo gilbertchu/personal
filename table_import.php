@@ -1,3 +1,4 @@
+<!-- EXAMPLE: Using PHP to turn copied tables into HTML. You can select and copy columns directly from excel docs. -->
 <!DOCTYPE html>
 <html>
 <head>
